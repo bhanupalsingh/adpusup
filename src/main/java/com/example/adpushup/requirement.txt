@@ -1,0 +1,58 @@
+Objective:
+You are given a ​ list​ of websites for which you have to crawl “ads.txt” files and store the contents
+in a SQL database to query later.
+Ads.txt:
+Ads.txt commonly exists for those websites that display ads. Ads.txt of a website can be viewed
+by appending “/ads.txt” at the end of its domain name. Like, “http://verbalcommits.com/ads.txt”.
+It contains multiple records in new lines and four comma separated fields in each record.
+Following are the four comma separated fields.
+1. Advertiser name (Mandatory)
+2. Advertiser id (Specific to that website and advertiser) (Mandatory)
+3. Account type (Mandatory)
+4. Tag id (Optional. Can be missing for some records.)
+In the following screenshot, a sample ads.txt file of “verbalcommits.com” is shown.
+1. Each line represents a record. In the above screenshot, there are 15 records. Each
+record contains four fields separated by a comma (“,”).
+2. First field is advertiser’s name (33across.com, pubmatic.com etc.).
+3. Second field is the advertiser’s id (0014000001a2fg3AAA, 156423 etc.).
+4. Third field is the account type (DIRECT, RESELLER etc.).
+5. Fourth is the tag id (bbea06d9c4d2853c, 5d62403b186f2ace etc.).
+6. Apart from above mentioned fields, there are comments as well. Comments start with a
+hash (“#”). Marked in screenshot as red. We can ignore them.Technical Objective:
+1. Write a Java Maven application which reads the given ​ text file​ of websites, crawl their
+Ads.txt files and store the data in a SQL database of your choice.
+2. The code should be written in a way, if run again it should remove previous entries and
+add new ones.
+3. Feel free to design SQL Schema as per your understandings. You can design SQL
+schema upto any normalize form (1 NF, 2 NF, 3 NF).
+4. While designing the SQL Schema please make sure at least following queries are
+possible.
+a. List of unique advertisers on a website.
+b. List of websites that contain a given advertiser.
+c. List of websites that contain a given advertiser id.
+d. List of all unique advertisers.
+Bonus points:
+1. Implement task using threading. Crawling of URLs for Ads.txt data and db operations are
+expected to be done concurrently using threads.
+2. Program should write an error log file containing all the encountered exceptions/errors.
+3. Program should write a run summary log file which will have at least the following details.
+a. Number and list of websites successfully crawled.
+b. Number and list of websites not crawled and the reason. Like, ads.txt doesn’t
+exists or website doesn’t exist etc.
+c. Number of records saved for each website.
+Note:
+1. For a website, ads.txt may or may not exist or there can be an empty ads.txt file or
+website domain can be invalid. We can ignore these types of websites.
+2. A website can be present more than once in the input list.
+3. We do not need the comments in a ads.txt file. Comments should be ignored.
+4. Any SQL database can be used.
+5. While handling the case of running the application again, the input list of websites can be
+changed. For ex, if in first run list contains 100 websites, in the second run, the list can
+contain the same or different websites.
+Submission:
+1. Please share the code either through a zipped folder or by posting it in a private
+GitHub/BitBucket repository.
+2. Share the SQL schemas in separate file(s).
+Resources:
+1. Website ​ list​ .
+2. More about ​ Ads.txt
