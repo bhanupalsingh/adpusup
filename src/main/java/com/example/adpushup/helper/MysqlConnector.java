@@ -15,11 +15,11 @@ public class MysqlConnector {
 	
 	
 	//we can store these info in environment path or  properties files . for simplicity I am intializing directly here only. 
-	private static final String USERNAME =  "traform"; //"sql12346031" ;
-	private static final String PASSWORD = "traform"; //"s5iiu3WkCq";
-	private static final String DATABASE = "adpushup"; //"sql12346031";
+	private static final String USERNAME =  "sql12346031" ;
+	private static final String PASSWORD = "s5iiu3WkCq";
+	private static final String DATABASE = "sql12346031";
 	private static final String JDBC_DRIVER = "com.mysql.cj.jdbc.Driver";//"com.mysql.jdbc.Driver";  
-	static final String JDBC_DB_URL =  "jdbc:mysql://localhost:3306/"+DATABASE;          //"jdbc:mysql://sql12.freesqldatabase.com:3306/"+DATABASE;
+	static final String JDBC_DB_URL =  "jdbc:mysql://sql12.freesqldatabase.com:3306/"+DATABASE;
 	private static GenericObjectPool gPool = null;
 	public static DataSource poolingDataSource ;
 	private static MysqlConnector mysqlConnector ;
